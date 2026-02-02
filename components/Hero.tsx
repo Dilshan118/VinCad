@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MoveDown } from 'lucide-react';
 import Button from './ui/Button';
+import BlurText from './ui/BlurText';
 
 const Hero: React.FC = () => {
   return (
@@ -17,19 +18,32 @@ const Hero: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             Available for new projects
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.1] mb-8">
-            Visualizing Your <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-400 to-zinc-600">
-              Brand's Identity.
-            </span>
+            <BlurText
+              text="Visualizing Your"
+              animateBy="words"
+              direction="bottom"
+              delay={0.1}
+              className="block"
+            />
+            <BlurText
+              text="Brand's Identity."
+              animateBy="words"
+              direction="bottom"
+              delay={0.15}
+              elementClassName="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-400 to-zinc-600"
+            />
           </h1>
-          
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed">
-            We transform abstract concepts into tangible, high-impact designs. 
-            From minimalist logos to complex marketing campaigns, we build visual 
-            languages that speak louder than words.
-          </p>
+
+          <div className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed">
+            <BlurText
+              text="We transform abstract concepts into tangible, high-impact designs. From minimalist logos to complex marketing campaigns, we build visual languages that speak louder than words."
+              animateBy="words"
+              direction="bottom"
+              delay={0.02}
+            />
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 items-start">
             <Button size="lg" icon={<ArrowRight size={18} />} onClick={() => document.getElementById('portfolio')?.scrollIntoView()}>
